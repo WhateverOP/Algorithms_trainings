@@ -2,7 +2,8 @@ set_size = 10
 my_set = [[] for i in range(set_size)]
 
 def add(x):
-    my_set[x % set_size].append(x)
+    if not (find(x)):
+        my_set[x % set_size].append(x)
 
 def find(x):
     for now in my_set[x % set_size]:
