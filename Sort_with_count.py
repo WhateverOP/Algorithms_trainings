@@ -8,5 +8,5 @@ def sort_with_count(seq):
     now_pos = 0
     for val in range(0,k):
         for i in range(count[val]):
-            seq[now_pos] = minval - val
+            seq[now_pos] = min_val - val
             now_pos += 1
