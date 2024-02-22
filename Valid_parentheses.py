@@ -30,6 +30,7 @@ def isValid(s):
 # s = "(]"
 # s = "(()(()"
 # s = "([)]"
-s = "]"
+# s = "]"
+s = input()
 ans = isValid(s)
 print(ans)
