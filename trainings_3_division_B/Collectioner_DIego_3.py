@@ -93,10 +93,29 @@ def get_number_of_stickers_slow(N_arr, K_arr):
         K_arr_interesting[i] = len(N_arr_sorted_unique[0:j_max])
     return K_arr_interesting
 
+
+def get_number_of_stickers_better(N_arr, K_arr):
+    N_arr_copy = N_arr.copy()
+    N_arr_unique = list(set(N_arr_copy))
+    N_arr_sorted_unique = sorted(N_arr_unique)
+    K_arr_interesting = [0] * len(K_arr)
+    
+    # N_arr_sorted = sorted(N_arr)
+    # N_arr_sorted_unique = []
+    # N_arr_sorted_unique.append(N_arr_sorted[0])
+    # for i in range(0, len(N_arr_sorted)):
+    #     if N_arr_sorted_unique[-1] != N_arr_sorted[i]:
+    #         N_arr_sorted_unique.append(N_arr_sorted[i])
+    return N_arr_sorted_unique
+
+N_arr = [1, 2, 3, 1, 3, 9, 1, 5] 
+K_arr = [1, 8, 2] 
+
 # ans = get_number_of_stickers_slow(N_arr, K_arr)
 # ans = get_number_of_stickers_better(N_arr, K_arr)
-# for i in ans:
-#     print(i)
+ans = get_number_of_stickers_better(N_arr, K_arr)
+for i in ans:
+    print(i)
 
 # N_arr = [1, 9, 5] 
 # K_arr = [1, 8, 2] 
@@ -107,24 +126,24 @@ def get_number_of_stickers_slow(N_arr, K_arr):
 # N_arr = [9, 5, 7] 
 # K_arr = [0, 10, 7] 
 
-ans_better = get_number_of_stickers_better(N_arr, K_arr)
-print('ans better:')
-for i in ans_better:
-    print(i)
+# ans_better = get_number_of_stickers_better(N_arr, K_arr)
+# print('ans better:')
+# for i in ans_better:
+#     print(i)
 
-ans_slow = get_number_of_stickers_slow(N_arr, K_arr)
-print('ans slow:')
-for i in ans_slow:
-    print(i)
+# ans_slow = get_number_of_stickers_slow(N_arr, K_arr)
+# print('ans slow:')
+# for i in ans_slow:
+#     print(i)
 
-while True:
-    N_arr = [random.randint(0, 1e1) for i in range(3)]
-    K_arr = [random.randint(0, 1e1) for i in range(3)]
-    ans_slow = get_number_of_stickers_slow(N_arr, K_arr)
-    ans_better = get_number_of_stickers_better(N_arr, K_arr)
-    if (ans_slow == ans_better):
-        print(f'OK: \n N_arr = {N_arr} \n K_arr = {K_arr} \n ans_slow = {ans_slow} -> {ans_slow} == {ans_better}')
-    else:
-        print(f'NOT OK: \n N_arr = {N_arr} \n K_arr = {K_arr} \n ans_slow = {ans_slow} -> {ans_slow} != {ans_better}')
-        break
+# while True:
+#     N_arr = [random.randint(0, 1e1) for i in range(3)]
+#     K_arr = [random.randint(0, 1e1) for i in range(3)]
+#     ans_slow = get_number_of_stickers_slow(N_arr, K_arr)
+#     ans_better = get_number_of_stickers_better(N_arr, K_arr)
+#     if (ans_slow == ans_better):
+#         print(f'OK: \n N_arr = {N_arr} \n K_arr = {K_arr} \n ans_slow = {ans_slow} -> {ans_slow} == {ans_better}')
+#     else:
+#         print(f'NOT OK: \n N_arr = {N_arr} \n K_arr = {K_arr} \n ans_slow = {ans_slow} -> {ans_slow} != {ans_better}')
+#         break
         
